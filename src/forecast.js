@@ -10,7 +10,8 @@ const forecast = (latitude,longitude, callback)=>{
         }else if(response.body.error){
             callback('Unable to find location.', undefined)
         }else{
-            callback(undefined, response.body.daily.data[0].summary)
+            callback(undefined, response.body.daily.data[0].summary + "Wind speed is " 
+            + response.body.daily.data[0].windSpeed + " and pressure is "+response.body.daily.data[0].pressure )
         }
     })
 }   
