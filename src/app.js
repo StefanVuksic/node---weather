@@ -6,8 +6,8 @@ const geoCode = require('./geoCode')
 const forecast = require('./forecast')
 
 
-const app =express();
-
+const app =express();   
+const port = process.env.PORT || 3000;
 //Define paths for express confiquration
 const publicDirectoryPath = path.join(__dirname,'../public');
 const viewsPath = path.join(__dirname,'../templates/views');
@@ -106,8 +106,8 @@ app.use(express.static(path.join(__dirname, '../public/help.html')))
 
 
 
-app.listen(3000,()=>{
-    console.log('Server is on port 3000')
+app.listen(port,()=>{
+    console.log('Server is on port ' + port)
 })
 
 console.log('some git changes')
